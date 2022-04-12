@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace Lab_3.Logger
 {
-    class FileLogger
+    class FileLogger :WriterLogger
     {
         bool disposed;
-        protected FileStream stream;
+
+        private FileStream stream;
+        public FileLogger(string path)
+        {
+            FileStream stream = new FileStream(path, FileMode.Append);
+            base.writer = new StreamWriter(stream, Encoding.UTF8);
+        }
+        public override void Dispose()
+        {
+            this.stream.Dispose();
+        }
     }
 }

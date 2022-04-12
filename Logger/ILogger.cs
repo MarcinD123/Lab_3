@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab_3.Logger
 {
-    interface ILogger :IDisposable
+    interface ILogger : IDisposable
     {
-        public interface ILogger : IDisposable
-        {
+       
             void Log(params String[] messages);
-        }
+
+        
     }
 }
