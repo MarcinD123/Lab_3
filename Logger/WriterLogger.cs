@@ -9,18 +9,40 @@ namespace Lab_3.Logger
     public abstract class WriterLogger : ILogger
     {
 
-
+        protected FileStream stream;
         protected TextWriter writer;
 
-        public virtual void Log(params string[] messages)
+        
+        public   void Log(params string[] messages)  //virtual?
         {
-
-            // Uzupełnić to miejsce o logikę zapisu opartą o TextWriter ...
+            Console.WriteLine("xddd");
+            //Uzupełnić to miejsce o logikę zapisu opartą o TextWriter...
             using (FileStream stream = new FileStream("file.txt", FileMode.Append))
             using (TextWriter writer = new StreamWriter(stream, Encoding.UTF8))
             {
-                writer.Write(messages);
-                writer.Flush();
+                string time = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
+                writer.Write("xD");
+                //Console.WriteLine("xD");
+                Console.WriteLine(messages.Length);
+                //Console.WriteLine(messages[0]);
+                if (messages.Length == 1)
+                {
+                    Console.WriteLine("reee");
+                    writer.Write(messages.ToString());
+                    writer.Flush();
+                }
+                else
+                {
+
+
+                    foreach (var item in messages)
+                    {
+                        Console.WriteLine("reee");
+                        writer.Write(item.ToString());
+                    }
+                    //writer.Write(messages.ToString());
+                    writer.Flush();
+                }
             }
         }
 

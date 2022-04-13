@@ -8,9 +8,12 @@ namespace Lab_3.Logger
 {
     interface ILogger : IDisposable
     {
-       
-            void Log(params String[] messages);
 
-        
+        void Log(params String[] messages)
+        {
+            Log(messages);
+        }
+
+
     }
 }

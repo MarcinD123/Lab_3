@@ -13,7 +13,7 @@ namespace Lab_3
             ILogger[] loggers = new ILogger[]
             {
                 new ConsoleLogger(),
-                new FileLogger("log.txt"),
+                //new FileLogger("log.txt"),
                 //new SocketLogger("google.com", 80)
             };
 
