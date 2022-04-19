@@ -8,40 +8,21 @@ namespace Lab_3.Logger
 {
     class CommonLogger : ILogger
     {
-        private ILogger[] loggers;
-        //ctor
+        private ILogger[] loggers { get; set; }
+
         public CommonLogger(ILogger[] loggers)
         {
-            
-        }
-        public void Log(string message)
-        {
-            Console.WriteLine(message);
+            this.loggers = loggers;
         }
         public void Log(params string[] messages)
         {
-            string time = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
-
-            if (messages.Length == 1)
+            foreach (var item in loggers)
             {
-                Console.WriteLine($"{time} {messages[0]}");
-            }
-            else
-            {
-
-                Console.Write(time + " ");
-                foreach (var item in messages)
-                {
-                    Console.Write($"{item.ToString()} ");
-                }
+                item.Log(messages);
             }
         }
-
-
         public void Dispose()
         {
-
         }
-
     }
 }

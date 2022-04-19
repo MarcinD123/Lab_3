@@ -8,45 +8,14 @@ namespace Lab_3.Logger
 {
     class ConsoleLogger : WriterLogger
     {
-        
-        public ConsoleLogger(string[] messages) : base()
-        {
-            //Console.WriteLine("xD");
-            Log(messages);
 
-        }
-
-        public ConsoleLogger():base()
+        public ConsoleLogger(params string[] messages)
         {
-            
-        }
-
-        public void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
-        public void Log(params string[] messages)
-        {
-            string time = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
-
-            if (messages.Length == 1)
+            foreach (var item in messages)
             {
-                Console.WriteLine($"{time} {messages[0]}");
+                Console.WriteLine(item);
+                //Console.WriteLine("data");
             }
-            else
-            {
-
-                Console.Write(time + " ");
-                foreach (var item in messages)
-                {
-                    Console.Write($"{item.ToString()} ");
-                }
-            }
-        }
-        //dispose:
-        public override void Dispose()
-        {
-
         }
 
     }
