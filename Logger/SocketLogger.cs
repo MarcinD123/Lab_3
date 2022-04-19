@@ -9,5 +9,14 @@
 //    class SocketLogger
 //    {
 //        ClientSocket clientSocket;
+
+//        public SocketLogger(string host, int port)
+//        {
+//            V1 = host;
+//            V2 = port;
+//        }
+
+//        public string V1 { get; }
+//        public int V2 { get; }
 //    }
 //}

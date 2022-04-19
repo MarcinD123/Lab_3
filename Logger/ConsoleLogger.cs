@@ -9,14 +9,30 @@ namespace Lab_3.Logger
     class ConsoleLogger : WriterLogger
     {
 
-        public ConsoleLogger(params string[] messages)
+        public ConsoleLogger()
         {
-            foreach (var item in messages)
+
+
+        }
+        string time = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
+        public override void Log(params string[] messages)
+        {
+            if (messages.Length == 1)
             {
-                Console.WriteLine(item);
-                //Console.WriteLine("data");
+
+                Console.WriteLine(time + " " + messages[0]);
+            }
+            else
+            {
+                Console.Write(time + " ");
+                foreach (var item in messages)
+                {
+                    Console.Write(item + " ");
+                }
+
+
             }
         }
-        
     }
 }
+

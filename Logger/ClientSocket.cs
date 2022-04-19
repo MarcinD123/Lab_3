@@ -8,13 +8,13 @@
 
 //namespace Lab_3.Logger
 //{
-//    public class ClientSocket :IDisposable
+//    public class ClientSocket : IDisposable
 //    {
 //        private bool disposed;
 
 //        private Socket socket;
 
-//        public ClientSocket(string host, int port)
+//        public ClientSocket(string host, int port):base()
 //        {
 //            IPHostEntry entry = Dns.GetHostEntry(host);
 
