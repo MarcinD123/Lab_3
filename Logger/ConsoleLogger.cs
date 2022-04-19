@@ -17,6 +17,6 @@ namespace Lab_3.Logger
                 //Console.WriteLine("data");
             }
         }
-
+        
     }
 }

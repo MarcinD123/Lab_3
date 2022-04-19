@@ -19,6 +19,7 @@ namespace Lab_3.Logger
             foreach (var item in loggers)
             {
                 item.Log(messages);
+                Console.WriteLine(item.ToString()) ;
             }
         }
         public void Dispose()
