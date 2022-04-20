@@ -38,15 +38,18 @@ namespace Lab_3.Logger
                     {
                         writer.Write(item + " ");
                     }
-                
-                //writer.Write("xD");
-                this.writer.Flush();
+                writer.WriteLine();
+            }
+            //writer.Write("xD");
+            
+            this.writer.Flush();
                 //writer.Close(); stream.Close();
                 //writer.Dispose(); stream.Dispose();
-            }
+            
         }
         public void Dispose()
         {
+            stream.Dispose();
             
         }
     }
